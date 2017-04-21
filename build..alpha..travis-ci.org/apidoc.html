@@ -1,0 +1,778 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Vinelab/node-promise-cache"
+
+    >promise-cache (v0.1.8)</a>
+</h1>
+<h4>A caching tool that can easily be expanded with different cache stores and preserves data-types.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.promise-cache">module promise-cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.create">
+            function <span class="apidocSignatureSpan">promise-cache.</span>create
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.instance">
+            function <span class="apidocSignatureSpan">promise-cache.</span>instance
+            <span class="apidocSignatureSpan">(Q, Manager, Crypto)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass">
+            function <span class="apidocSignatureSpan">promise-cache.</span>klass
+            <span class="apidocSignatureSpan">(Q, Manager, Crypto, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">promise-cache.</span>klass.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.promise-cache.klass">module promise-cache.klass</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.klass">
+            function <span class="apidocSignatureSpan">promise-cache.</span>klass
+            <span class="apidocSignatureSpan">(Q, Manager, Crypto, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.promise-cache.klass.prototype">module promise-cache.klass.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.decrement">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>decrement
+            <span class="apidocSignatureSpan">(key, count)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.flush">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>flush
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.forever">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>forever
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.forget">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>forget
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.get">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.getCacheKey">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>getCacheKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.has">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>has
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.increment">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>increment
+            <span class="apidocSignatureSpan">(key, count)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.parseResult">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>parseResult
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.put">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>put
+            <span class="apidocSignatureSpan">(key, value, ttl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.remember">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>remember
+            <span class="apidocSignatureSpan">(key, ttl, closure)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.rememberForever">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>rememberForever
+            <span class="apidocSignatureSpan">(key, closure)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promise-cache.klass.prototype.ttl">
+            function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>ttl
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.promise-cache" id="apidoc.module.promise-cache">module promise-cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.create" id="apidoc.element.promise-cache.create">
+        function <span class="apidocSignatureSpan">promise-cache.</span>create
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (config) {
+  var Crypto, Manager, Q;
+  Q = require(&#x27;q&#x27;);
+  Crypto = require(&#x27;crypto&#x27;);
+  Manager = (config != null) &#x26;&#x26; ((config != null ? config.store : void 0) != null) ? store : require(&#x27;./stores/RedisStore&#x27;).instance
+(null, config);
+  return new Cache(Q, Manager, Crypto, config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`npm install promise-cache`
+
+## Usage
+
+This code is assumed existing in all of the upcoming examples.
+
+`Cache = require(&#x27;promise-cache&#x27;).<span class="apidocCodeKeywordSpan">create</span>()`
+
+##### Storing items in the cache
+
+```javascript
+Cache.put(&#x27;key&#x27;, &#x27;value&#x27; 20); // will be stored for 20 seconds.
+
+Cache.forever(&#x27;other&#x27;, &#x27;thing&#x27;); // will be stored indefinitely
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.instance" id="apidoc.element.promise-cache.instance">
+        function <span class="apidocSignatureSpan">promise-cache.</span>instance
+        <span class="apidocSignatureSpan">(Q, Manager, Crypto)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">instance = function (Q, Manager, Crypto) {
+  return new Cache(Q, Manager, Crypto);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass" id="apidoc.element.promise-cache.klass">
+        function <span class="apidocSignatureSpan">promise-cache.</span>klass
+        <span class="apidocSignatureSpan">(Q, Manager, Crypto, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache(Q, Manager, Crypto, config) {
+  this.Q = Q;
+  this.Manager = Manager;
+  this.Crypto = Crypto;
+  this.getCacheKey = __bind(this.getCacheKey, this);
+  this.prefix = (config != null) &#x26;&#x26; ((config != null ? config.prefix : void 0) != null) ? config.prefix : &#x27;pcache&#x27;;
+  this.default_ttl = (config != null) &#x26;&#x26; ((config != null ? config.ttl : void 0) != null) ? config.ttl : 60;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.promise-cache.klass" id="apidoc.module.promise-cache.klass">module promise-cache.klass</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.klass" id="apidoc.element.promise-cache.klass.klass">
+        function <span class="apidocSignatureSpan">promise-cache.</span>klass
+        <span class="apidocSignatureSpan">(Q, Manager, Crypto, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache(Q, Manager, Crypto, config) {
+  this.Q = Q;
+  this.Manager = Manager;
+  this.Crypto = Crypto;
+  this.getCacheKey = __bind(this.getCacheKey, this);
+  this.prefix = (config != null) &#x26;&#x26; ((config != null ? config.prefix : void 0) != null) ? config.prefix : &#x27;pcache&#x27;;
+  this.default_ttl = (config != null) &#x26;&#x26; ((config != null ? config.ttl : void 0) != null) ? config.ttl : 60;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.promise-cache.klass.prototype" id="apidoc.module.promise-cache.klass.prototype">module promise-cache.klass.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.decrement" id="apidoc.element.promise-cache.klass.prototype.decrement">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>decrement
+        <span class="apidocSignatureSpan">(key, count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decrement = function (key, count) {
+  var dfd;
+  if (count == null) {
+    count = 1;
+  }
+  dfd = this.Q.defer();
+  this.Manager.decrement(this.getCacheKey(key), count, function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.flush" id="apidoc.element.promise-cache.klass.prototype.flush">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>flush
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function () {
+  var dfd;
+  dfd = this.Q.defer();
+  this.Manager.flush(function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.forever" id="apidoc.element.promise-cache.klass.prototype.forever">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>forever
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forever = function (key, value) {
+  var dfd, mapped;
+  dfd = this.Q.defer();
+  key = this.getCacheKey(key);
+  mapped = JSON.stringify({
+    _cached: value
+  });
+  this.Manager.set(key, mapped, function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`Cache = require(&#x27;promise-cache&#x27;).create()`
+
+##### Storing items in the cache
+
+```javascript
+Cache.put(&#x27;key&#x27;, &#x27;value&#x27; 20); // will be stored for 20 seconds.
+
+Cache.<span class="apidocCodeKeywordSpan">forever</span>(&#x27;other&#x27;, &#x27;thing&#x27;); // will be stored indefinitely
+```
+
+##### Retrieving cached items
+
+```javascript
+Cache.get(&#x27;key&#x27;).then(function(result){
+console.log(result); // value will be whatever we have stored.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.forget" id="apidoc.element.promise-cache.klass.prototype.forget">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>forget
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forget = function (key) {
+  var dfd;
+  dfd = this.Q.defer();
+  this.Manager.del(this.getCacheKey(key), function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.get" id="apidoc.element.promise-cache.klass.prototype.get">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key) {
+  var dfd;
+  dfd = this.Q.defer();
+  this.Manager.get(this.getCacheKey(key), (function(_this) {
+    return function(err, result) {
+      var num;
+      if (err) {
+        return dfd.reject(err);
+      }
+      if (!result) {
+        return dfd.resolve(result);
+      }
+      num = parseInt(result);
+      if (!isNaN(num)) {
+        return dfd.resolve(num);
+      }
+      return dfd.resolve(_this.parseResult(result));
+    };
+  })(this));
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Cache.forever(&#x27;other&#x27;, &#x27;thing&#x27;); // will be stored indefinitely
+```
+
+##### Retrieving cached items
+
+```javascript
+Cache.<span class="apidocCodeKeywordSpan">get</span>(&#x27;key&#x27;).then(function(result){
+    console.log(result); // value will be whatever we have stored.
+});
+```
+
+Since `Cache` works in promises then you may assign the operation to a variable and attach handlers to it:
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.getCacheKey" id="apidoc.element.promise-cache.klass.prototype.getCacheKey">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>getCacheKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCacheKey = function (key) {
+  var hash;
+  if (!this.prefix || this.prefix.length &#x3c;= 0) {
+    return key;
+  } else {
+    if (typeof key === &#x27;string&#x27;) {
+      return &#x22;&#x22; + this.prefix + &#x22;:&#x22; + key;
+    }
+    hash = this.Crypto.createHash(&#x27;md5&#x27;).update(JSON.stringify({
+      _key: key
+    })).digest(&#x27;hex&#x27;);
+    return &#x22;&#x22; + this.prefix + &#x22;:&#x22; + hash;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.has" id="apidoc.element.promise-cache.klass.prototype.has">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>has
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (key) {
+  var dfd;
+  dfd = this.Q.defer();
+  key = this.getCacheKey(key);
+  this.Manager.has(key, function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.increment" id="apidoc.element.promise-cache.klass.prototype.increment">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>increment
+        <span class="apidocSignatureSpan">(key, count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">increment = function (key, count) {
+  var dfd;
+  if (count == null) {
+    count = 1;
+  }
+  dfd = this.Q.defer();
+  this.Manager.increment(this.getCacheKey(key), count, function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.parseResult" id="apidoc.element.promise-cache.klass.prototype.parseResult">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>parseResult
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseResult = function (result) {
+  var e, parsed;
+  try {
+    parsed = JSON.parse(result);
+    if ((parsed != null ? parsed._cached : void 0) != null) {
+      parsed = parsed._cached;
+    }
+  } catch (_error) {
+    e = _error;
+    parsed = result;
+  }
+  return parsed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.put" id="apidoc.element.promise-cache.klass.prototype.put">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>put
+        <span class="apidocSignatureSpan">(key, value, ttl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (key, value, ttl) {
+  var dfd, mapped;
+  if (ttl == null) {
+    ttl = this.default_ttl;
+  }
+  dfd = this.Q.defer();
+  key = this.getCacheKey(key);
+  mapped = JSON.stringify({
+    _cached: value
+  });
+  this.Manager.setFor(key, mapped, ttl, function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This code is assumed existing in all of the upcoming examples.
+
+`Cache = require(&#x27;promise-cache&#x27;).create()`
+
+##### Storing items in the cache
+
+```javascript
+Cache.<span class="apidocCodeKeywordSpan">put</span>(&#x27;key&#x27;, &#x27;value&#x27; 20); // will be stored for 20 seconds.
+
+Cache.forever(&#x27;other&#x27;, &#x27;thing&#x27;); // will be stored indefinitely
+```
+
+##### Retrieving cached items
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.remember" id="apidoc.element.promise-cache.klass.prototype.remember">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>remember
+        <span class="apidocSignatureSpan">(key, ttl, closure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remember = function (key, ttl, closure) {
+  var dfd;
+  dfd = this.Q.defer();
+  this.has(key).then((function(_this) {
+    return function(stored) {
+      if (!stored) {
+        return closure(function(data) {
+          return _this.put(key, data, ttl).then(function() {
+            return dfd.resolve(data);
+          });
+        });
+      } else {
+        return _this.get(key).then(function(value) {
+          return dfd.resolve(value);
+        });
+      }
+    };
+  })(this));
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### Remembering the results of a closure
+
+Sometimes you may wish to perform a certain operation and store its results if the data you&#x27;re looking for
+was not found in the cache. This can be achieved using `remember` or `rememberForever` methods.
+
+###### Simple use-case
+```javascript
+Cache.<span class="apidocCodeKeywordSpan">remember</span>(&#x27;some-key&#x27;, 22, function(store){
+    data = &#x27;do something to get the data&#x27;;
+
+    store(data);
+});
+```
+
+###### Promise use-case
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.rememberForever" id="apidoc.element.promise-cache.klass.prototype.rememberForever">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>rememberForever
+        <span class="apidocSignatureSpan">(key, closure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rememberForever = function (key, closure) {
+  var dfd;
+  dfd = this.Q.defer();
+  this.has(key).then((function(_this) {
+    return function(stored) {
+      if (!stored) {
+        return closure(function(data) {
+          return _this.forever(key, data).then(function() {
+            return dfd.resolve(data);
+          });
+        });
+      } else {
+        return _this.get(key).then(function(value) {
+          return dfd.resolve(value);
+        });
+      }
+    };
+  })(this));
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+The above example with `rememberForever` would store the data forever:
+
+```javascript
+Http = require(&#x27;promise-http&#x27;).client;
+
+forever = Cache.<span class="apidocCodeKeywordSpan">rememberForever</span>(&#x27;threefour&#x27;, function(store){
+    request = Http.get(&#x27;http://echo.jsontest.com/key/value/three/four&#x27;)
+    request.then(function(response){
+        // store the JSON representation of the response.
+        store(JSON.parse(response));
+    });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promise-cache.klass.prototype.ttl" id="apidoc.element.promise-cache.klass.prototype.ttl">
+        function <span class="apidocSignatureSpan">promise-cache.klass.prototype.</span>ttl
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ttl = function (key) {
+  var dfd;
+  dfd = this.Q.defer();
+  key = this.getCacheKey(key);
+  this.Manager.ttl(key, function(err, result) {
+    if (err) {
+      return dfd.reject(err);
+    }
+    return dfd.resolve(result);
+  });
+  return dfd.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
